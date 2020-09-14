@@ -27,4 +27,10 @@ Route::get('/read',function(){
        echo "<br>";
    }
 });
+Route::get('/update',function(){
+   $user = User::findOrFail(1);
+   $user->posts()->whereId(1)->update(['title' => 'I love laravel','body' => 'This is awesome, thank you Edwin' ]);
+   //or we can way where('id','=',1) or where('id',1)
+
+});
 
