@@ -1,0 +1,3 @@
+14-94:
+in php artisan tinker we wrote 
+App\User::create(['name' => 'x','email' => 'x@gamil.com', 'password' => bcrypt('123')]); to create a user
