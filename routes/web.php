@@ -33,4 +33,9 @@ Route::get('/update',function(){
    //or we can way where('id','=',1) or where('id',1)
 
 });
+Route::get('/delete',function(){
+   $user = User::findOrFail(1);
+   //$user->posts()->whereId(1)->delete();
+   $user->posts()->delete();
+});
 
