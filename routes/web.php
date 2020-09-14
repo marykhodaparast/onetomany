@@ -18,6 +18,13 @@ Route::get('/', function () {
 Route::get('/create',function(){
    $user = User::findOrFail(1);
    //$post = new Post(['title' => 'title', 'body' => 'body']);
-   $user->posts()->save(new Post(['title' => 'title', 'body' => 'body']));
-
+   $user->posts()->save(new Post(['title' => 'title2', 'body' => 'body2']));
 });
+Route::get('/read',function(){
+   $user = User::findOrFail(1);
+   foreach($user->posts as $post){
+       echo $post->title;
+       echo "<br>";
+   }
+});
+
